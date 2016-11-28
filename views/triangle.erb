@@ -1,11 +1,11 @@
 <h1>What type of triangle is it?</h1>
 
-<% if @triangle.is_triangle?() == false %>
+<% if @triangle.triangle_type() == false %>
 <h3>It's not a triangle!</h3>
-<% elsif @triangle.equilateral?() %>
+<% elsif @triangle.triangle_type() == "equilateral" %>
 <h3>It's an equilateral!</h3>
-<% elsif @triangle.isosceles?() %>
+<% elsif @triangle.triangle_type() == "isosceles" %>
 <h3>It's an isosceles!</h3>
-<% elsif @triangle.scalene?() %>
+<% elsif @triangle.triangle_type() == "scalene" %>
 <h3>It's a scalene!</h3>
 <% end %>

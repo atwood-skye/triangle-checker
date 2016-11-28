@@ -4,31 +4,15 @@ class Triangle
     @side2 = side_two
     @side3 = side_three
   end
-
-  define_method(:equilateral?) do
-    if @side1.==(@side2) && @side2.==(@side3)
-      true
-    end
-  end
-
-  define_method(:isosceles?) do
-    if @side1.==(@side2) && @side1.!=(@side3) || @side1.==(@side3) && @side1.!=(@side2) || @side2.==(@side3) && @side1.!=(@side2)
-      true
-    end
-  end
-
-  define_method(:scalene?) do
-    if @side1.!=(@side2) && @side2.!=(@side3) && @side1.!=(@side3)
-      true
-    end
-  end
-
-  define_method(:is_triangle?) do
+  define_method(:triangle_type) do
     if @side1 + @side2 < @side3 || @side2 + @side3 < @side1 || @side1 + @side3 < @side2
       false
-    else
-      true
+    elsif @side1.==(@side2) && @side2.==(@side3)
+      "equilateral"
+    elsif @side1.==(@side2) && @side1.!=(@side3) || @side1.==(@side3) && @side1.!=(@side2) || @side2.==(@side3) && @side1.!=(@side2)
+      "isosceles"
+    elsif @side1.!=(@side2) && @side2.!=(@side3) && @side1.!=(@side3)
+      "scalene"
     end
   end
-
 end
