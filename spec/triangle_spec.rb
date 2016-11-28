@@ -21,4 +21,10 @@ describe(Triangle) do
       expect(new_triangle.scalene?()).to(eq(true))
     end
   end
+  describe("#is_triangle?") do
+    it("checks if it is a triangle") do
+      new_triangle = Triangle.new(8, 4, 2)
+      expect(new_triangle.is_triangle?()).to(eq(false))
+    end
+  end
 end
